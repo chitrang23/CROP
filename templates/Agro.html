@@ -15,46 +15,42 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="../static/style.css" />
+  <link rel="stylesheet" href="../static/Style/style.css" />
 </head>
 <body>
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-        <img src="../static/images/your-crop-image.png" alt="Crop Icon"
+        <img src="../static/images/Logo.png" alt="AgroSense Logo"
              style="height:35px;width:35px;border-radius:50%;" />
         <span id="navTitle">AgroSense</span>
       </a>
-      <!-- Search Bar -->
-<li class="nav-item">
-  <input type="text" class="form-control me-2" id="searchInput" placeholder="Search..." style="border-radius: 25px; padding: 0.5rem 1rem;">
-</li>
-
+      
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <!-- Menu Dropdown -->
-          <li class="nav-item dropdown">
-            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown">
-              <span id="menu-text">Menu</span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#" id="menu-home">Home</a></li>
-              <li><a class="dropdown-item" href="#" id="menu-about">About</a></li>
-              <li><a class="dropdown-item" href="#" id="menu-services">Services</a></li>
-              <li><a class="dropdown-item" href="#" id="menu-contact">Contact</a></li>
-            </ul>
-          </li>
-
           <!-- Microphone Button -->
           <li class="nav-item">
             <button class="mic-button" id="micButton" onclick="toggleRecording()">
               <i class="fas fa-microphone"></i>
             </button>
+          </li>
+ 
+          <!-- Menu Dropdown -->
+          <li class="nav-item dropdown">
+            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              <span id="menuText">Menu</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" id="menuHome">Home</a></li>
+              <li><a class="dropdown-item" href="#" id="menuAbout">About</a></li>
+              <li><a class="dropdown-item" href="#" id="menuServices">Services</a></li>
+              <li><a class="dropdown-item" href="#" id="menuContact">Contact</a></li>
+            </ul>
           </li>
 
           <!-- Language Selector -->
@@ -73,149 +69,162 @@
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="container">
-      <h1 class="hero-text" id="heroText">Is yours facing one of this</h1>
+      <div class="hero-slogan-wrapper">
+        <h1 class="hero-text" id="heroText">
+          Is your Crop facing one of these?? Let's find out
+        </h1>
+
+        <!-- Inline Arrow beside slogan -->
+        <div class="arrow-inline-container">
+          <div class="arrow-container">
+            <div class="arrow">
+              <div class="arrow-head"></div>
+              <div class="arrow-shaft"></div>
+              <div class="arrow-feathers">
+                <div class="feather"></div>
+                <div class="feather"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Slideshow Section -->
-<section class="slideshow-section">
-  <div class="container">
-    <div class="slideshow-container">
-      <div class="carousel-track">
-        <!-- Add more images as needed -->
-        <div class="carousel-item far"><img src="../static/images/image1.jpg" alt="Slide 1" /></div>
-        <div class="carousel-item prev"><img src="../static/images/image2.jpg" alt="Slide 2" /></div>
-        <div class="carousel-item active"><img src="../static/images/image3.jpg" alt="Slide 3" /></div>
-        <div class="carousel-item next"><img src="../static/images/image4.jpg" alt="Slide 4" /></div>
-        <div class="carousel-item far"><img src="../static/images/image5.jpg" alt="Slide 5" /></div>
-        <div class="carousel-item far"><img src="../static/images/image6.jpg" alt="Slide 6" /></div>
-        <div class="carousel-item far"><img src="../static/images/image7.jpg" alt="Slide 7" /></div>
-        <div class="carousel-item far"><img src="../static/images/image8.jpg" alt="Slide 8" /></div>
+  <section class="slideshow-section">
+    <div class="container">
+      <div class="slideshow-container">
+        <div class="carousel-track">
+          <!-- Add more images as needed -->
+          <div class="carousel-item far"><img src="../static/images/image1.jpg" alt="Slide 1" /></div>
+          <div class="carousel-item prev"><img src="../static/images/image2.jpg" alt="Slide 2" /></div>
+          <div class="carousel-item active"><img src="../static/images/image3.jpg" alt="Slide 3" /></div>
+          <div class="carousel-item next"><img src="../static/images/image4.jpg" alt="Slide 4" /></div>
+          <div class="carousel-item far"><img src="../static/images/image5.jpg" alt="Slide 5" /></div>
+          <div class="carousel-item far"><img src="../static/images/image6.jpg" alt="Slide 6" /></div>
+          <div class="carousel-item far"><img src="../static/images/image7.jpg" alt="Slide 7" /></div>
+          <div class="carousel-item far"><img src="../static/images/image8.jpg" alt="Slide 8" /></div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Bootstrap JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Translation & Slideshow Script -->
+  <!-- JavaScript -->
   <script>
     const translations = {
       en: {
-        navTitle: "AgroSense", heroText: "Is yours facing one of this",
-        menuText: "Menu", menuHome: "Home", menuAbout: "About",
-        menuServices: "Services", menuContact: "Contact",
-        slide0Title: "Potato Late Blight", slide0Desc: "Destructive disease causing dark lesions on potato plants",
-        slide1Title: "Corn Borer Infestation", slide1Desc: "Pest damage causing holes in corn stalks and reduced yield",
-        slide2Title: "Wheat Rust Disease", slide2Desc: "Yellow rust affecting wheat crops, causing significant yield loss",
-        slide3Title: "Tomato Blight", slide3Desc: "Early blight disease causing dark spots on tomato leaves",
-        slide4Title: "Rice Blast Disease", slide4Desc: "Fungal disease affecting rice leaves and grains"
+        navTitle: "AgroSense", 
+        heroText: "Is your Crop facing one of these?? Let's Find out",
+        menuText: "Menu", 
+        menuHome: "Home", 
+        menuAbout: "About",
+        menuServices: "Services", 
+        menuContact: "Contact"
       },
       hi: {
-        navTitle: "एग्रोसेंस", heroText: "क्या आपकी फसल इनमें से किसी समस्या का सामना कर रही है",
-        menuText: "मेनू", menuHome: "होम", menuAbout: "हमारे बारे में",
-        menuServices: "सेवाएं", menuContact: "संपर्क",
-        slide0Title: "आलू में लेट ब्लाइट", slide0Desc: "आलू के पौधों पर काले धब्बे बनाने वाला विनाशकारी रोग",
-        slide1Title: "मक्का में बोरर कीट", slide1Desc: "कीट द्वारा मक्का के तने में छेद करने से उत्पादन में कमी",
-        slide2Title: "गेहूं में रस्ट रोग", slide2Desc: "पीला रस्ट गेहूं की फसल को प्रभावित करता है, जिससे नुकसान",
-        slide3Title: "टमाटर में ब्लाइट", slide3Desc: "अर्ली ब्लाइट रोग जो टमाटर के पत्तों पर काले धब्बे बनाता है",
-        slide4Title: "धान में ब्लास्ट रोग", slide4Desc: "फंगल रोग जो धान के पत्तों और दानों को प्रभावित करता है"
+        navTitle: "एग्रोसेंस", 
+        heroText: "क्या आपकी फसल इनमें से किसी एक का सामना कर रही है? आइए जानें",
+        menuText: "मेनू", 
+        menuHome: "होम", 
+        menuAbout: "हमारे बारे में",
+        menuServices: "सेवाएं", 
+        menuContact: "संपर्क"
       },
       mr: {
-        navTitle: "अ‍ॅग्रोसेंस", heroText: "तुमच्या पिकाला यापैकी कोणत्या समस्येचा सामना करावा लागत आहे",
-        menuText: "मेनू", menuHome: "मुख्यपृष्ठ", menuAbout: "आमच्याबद्दल",
-        menuServices: "सेवा", menuContact: "संपर्क",
-        slide0Title: "बटाट्यामध्ये लेट ब्लाइट", slide0Desc: "बटाट्याच्या झाडांवर काळे ठिपके निर्माण करणारा रोग",
-        slide1Title: "मक्यामध्ये बोरर कीड", slide1Desc: "कीडांमुळे मक्याच्या खोडात छिद्र पडून उत्पादन कमी",
-        slide2Title: "गहूमध्ये रस्ट रोग", slide2Desc: "पिवळा रस्ट गहूं येथे उत्पादन हानी करतो",
-        slide3Title: "टोमॅटोमध्ये ब्लाइट", slide3Desc: "अर्ली ब्लाइट रोग जो टोमॅटोच्या पानांवर काळे डाग बनवतो",
-        slide4Title: "तांदूळमध्ये ब्लास्ट रोग", slide4Desc: "बुरशीजन्य रोग जो तांदूळच्या पानांवर परिणाम करतो"
+        navTitle: "अ‍ॅग्रोसेंस", 
+        heroText: "तुमच्या पिकाला यापैकी काही समस्या आहेत का?? चला जाणून घेऊया.",
+        menuText: "मेनू", 
+        menuHome: "मुख्यपृष्ठ", 
+        menuAbout: "आमच्याबद्दल",
+        menuServices: "सेवा", 
+        menuContact: "संपर्क"
       }
     };
 
     function changeLanguage() {
-      const t = translations[document.getElementById('languageSelector').value] || translations.en;
+      const lang = document.getElementById('languageSelector').value;
+      const t = translations[lang] || translations.en;
+
       for (const id in t) {
         const el = document.getElementById(id);
-        if (el) el.textContent = t[id];
+        if (el) {
+          el.textContent = t[id];
+          console.log(`Updated ${id} → ${t[id]}`);
+        } else {
+          console.warn(`Missing element for id: ${id}`);
+        }
       }
     }
 
-  document.addEventListener("DOMContentLoaded", () => {
-  changeLanguage(); // Keep this if you're using translations
+    // Initialize language on load
+    document.addEventListener("DOMContentLoaded", () => {
+      changeLanguage();
 
-  const track = document.querySelector(".carousel-track");
+      const track = document.querySelector(".carousel-track");
 
-  function rotateSlidesForward() {
-    const items = track.querySelectorAll(".carousel-item");
+      function rotateSlidesForward() {
+        const items = track.querySelectorAll(".carousel-item");
+        track.appendChild(items[0]);
+        items.forEach(item => item.classList.remove("active"));
+        const updatedItems = track.querySelectorAll(".carousel-item");
+        const mid = Math.floor(updatedItems.length / 2);
+        updatedItems[mid].classList.add("active");
+      }
 
-    // Move first image to the end
-    track.appendChild(items[0]);
+      const items = track.querySelectorAll(".carousel-item");
+      const mid = Math.floor(items.length / 2);
+      items[mid].classList.add("active");
 
-    // Remove active from all
-    items.forEach(item => item.classList.remove("active"));
-
-    // Set middle item as active
-    const updatedItems = track.querySelectorAll(".carousel-item");
-    const mid = Math.floor(updatedItems.length / 2);
-    updatedItems[mid].classList.add("active");
-  }
-
-  // Set initial middle image as active
-  const items = track.querySelectorAll(".carousel-item");
-  const mid = Math.floor(items.length / 2);
-  items[mid].classList.add("active");
-
-  // Start rotating every 3 seconds
-  setInterval(rotateSlidesForward, 3000);
-});
+      setInterval(rotateSlidesForward, 3000);
+    });
 
     // Voice Recognition
     let isRecording = false;
-let recog; // Make recognition global
+    let recog;
 
-function toggleRecording() {
-  const micBtn = document.getElementById('micButton');
-  const icon = micBtn.querySelector('i');
-  const searchInput = document.getElementById('searchInput');
+    function toggleRecording() {
+      const micBtn = document.getElementById('micButton');
+      const icon = micBtn.querySelector('i');
+      const searchInput = document.getElementById('searchInput');
 
-  if (!isRecording && ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
-    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-    recog = new SR();
-    const langMap = { en: 'en-US', hi: 'hi-IN', mr: 'mr-IN' };
-    recog.lang = langMap[document.getElementById('languageSelector').value] || 'en-US';
+      if (!isRecording && ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
+        const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+        recog = new SR();
+        const langMap = { en: 'en-US', hi: 'hi-IN', mr: 'mr-IN' };
+        recog.lang = langMap[document.getElementById('languageSelector').value] || 'en-US';
 
-    recog.onstart = () => {
-      isRecording = true;
-      micBtn.classList.add('recording');
-      icon.classList.replace('fa-microphone', 'fa-stop');
-    };
+        recog.onstart = () => {
+          isRecording = true;
+          micBtn.classList.add('recording');
+          icon.classList.replace('fa-microphone', 'fa-stop');
+        };
 
-    recog.onend = () => {
-      isRecording = false;
-      micBtn.classList.remove('recording');
-      icon.classList.replace('fa-stop', 'fa-microphone');
-    };
+        recog.onend = () => {
+          isRecording = false;
+          micBtn.classList.remove('recording');
+          icon.classList.replace('fa-stop', 'fa-microphone');
+        };
 
-    recog.onresult = (e) => {
-      const transcript = e.results[0][0].transcript;
-      searchInput.value = transcript;
-    };
+        recog.onresult = (e) => {
+          const transcript = e.results[0][0].transcript;
+          if (searchInput) searchInput.value = transcript;
+        };
 
-    recog.onerror = (e) => {
-      alert(`Speech error: ${e.error}`);
-    };
+        recog.onerror = (e) => {
+          alert(`Speech error: ${e.error}`);
+        };
 
-    recog.start();
-  } else if (isRecording && recog) {
-    recog.stop();
-  } else {
-    alert('Speech recognition not supported.');
-  }
-}
-
+        recog.start();
+      } else if (isRecording && recog) {
+        recog.stop();
+      } else {
+        alert('Speech recognition not supported.');
+      }
+    }
   </script>
 </body>
 </html>
