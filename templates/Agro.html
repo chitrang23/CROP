@@ -91,24 +91,32 @@
     </div>
   </section>
 
-  <!-- Slideshow Section -->
-  <section class="slideshow-section">
-    <div class="container">
-      <div class="slideshow-container">
-        <div class="carousel-track">
-          <!-- Add more images as needed -->
-          <div class="carousel-item far"><img src="../static/images/image1.jpg" alt="Slide 1" /></div>
-          <div class="carousel-item prev"><img src="../static/images/image2.jpg" alt="Slide 2" /></div>
-          <div class="carousel-item active"><img src="../static/images/image3.jpg" alt="Slide 3" /></div>
-          <div class="carousel-item next"><img src="../static/images/image4.jpg" alt="Slide 4" /></div>
-          <div class="carousel-item far"><img src="../static/images/image5.jpg" alt="Slide 5" /></div>
-          <div class="carousel-item far"><img src="../static/images/image6.jpg" alt="Slide 6" /></div>
-          <div class="carousel-item far"><img src="../static/images/image7.jpg" alt="Slide 7" /></div>
-          <div class="carousel-item far"><img src="../static/images/image8.jpg" alt="Slide 8" /></div>
-        </div>
-      </div>
+ 
+  <!--SLIDER-->
+  <div class="slider-wrapper">
+    <div class="circle-track" id="circleTrack">
+      <div class="circle"><img src="../static/images/Tomato_home.jpg" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/Capsicum_home.webp" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/crop1_home.webp" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/crop2_home.webp" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/crop3_home.jpg" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/crop4_home.jpg" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/crop5_home.jpg" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/crop6_home.jpg" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/crop7_home.jpg" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/crop8_home.jpg" /></div>
     </div>
-  </section>
+  </div>
+
 
   <!-- Bootstrap JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
@@ -226,5 +234,61 @@
       }
     }
   </script>
+  <!--Script for animation-->
+  <script>
+    const track = document.getElementById("circleTrack");
+    const circles = Array.from(track.querySelectorAll(".circle"));
+    let currentIndex = 0;
+
+    function setTransform() {
+      const circleWidth = 120;
+      const connectorWidth = 40;
+      const totalUnit = circleWidth + connectorWidth;
+      const offset = currentIndex * (totalUnit + 0);
+      track.style.transform = `translateX(calc(50vw - ${circleWidth / 2}px - ${offset}px))`;
+    }
+
+    function updateActive() {
+      circles.forEach((el, i) => {
+        el.classList.toggle("active", i === currentIndex);
+      });
+    }
+
+    function slideNext() {
+      currentIndex++;
+      if (currentIndex >= circles.length) {
+        currentIndex = 0;
+      }
+      updateActive();
+      setTransform();
+    }
+
+    updateActive();
+    setTransform();
+    setInterval(slideNext, 3000);
+  </script>
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-section">
+        <h4>Team Members</h4>
+        <p>Vithika Surve </p>
+        <p>Sakshi Mahale</p>
+        <p>Bhakti Baraf</p>
+        <p>Chitrang Sawant</p>
+      </div>
+      <div class="footer-section">
+        <h4>Motive</h4>
+        <p>Helping farmers detect crop issues early using AI and smart tools.</p><br>
+        <h4>Future Scope</h4>
+        <p>Integration with government yojanas, AI crop prediction, and multilingual chatbot support.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p><i class="fas fa-envelope"></i> contact@agrosense.in</p>
+        <p><i class="fas fa-phone"></i> +91 9876543210</p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
