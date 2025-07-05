@@ -114,6 +114,26 @@
       <div class="circle"><img src="../static/images/crop7_home.jpg" /></div>
       <div class="connector"></div>
       <div class="circle"><img src="../static/images/crop8_home.jpg" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/Tomato_home.jpg" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/Capsicum_home.webp" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/crop1_home.webp" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/crop2_home.webp" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/crop3_home.jpg" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/crop4_home.jpg" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/crop5_home.jpg" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/crop6_home.jpg" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/crop7_home.jpg" /></div>
+      <div class="connector"></div>
+      <div class="circle"><img src="../static/images/crop8_home.jpg" /></div>
     </div>
   </div>
 
@@ -131,7 +151,19 @@
         menuHome: "Home", 
         menuAbout: "About",
         menuServices: "Services", 
-        menuContact: "Contact"
+        menuContact: "Contact",
+    footerTeamTitle: "Team Members",
+    footerMember1: "Vithika Surve",
+    footerMember2: "Sakshi Mahale",
+    footerMember3: "Bhakti Baraf",
+    footerMember4: "Chitrang Sawant",
+    footerMotiveTitle: "Motive",
+    footerMotiveText: "Helping farmers detect crop issues early using AI and smart tools.",
+    footerScopeTitle: "Future Scope",
+    footerScopeText: "Integration with government yojanas, AI crop prediction, and multilingual chatbot support.",
+    footerContactTitle: "Contact",
+    footerEmail: "contact@agrosense.in",
+    footerPhone: "+91 9876543210"
       },
       hi: {
         navTitle: "एग्रोसेंस", 
@@ -140,7 +172,19 @@
         menuHome: "होम", 
         menuAbout: "हमारे बारे में",
         menuServices: "सेवाएं", 
-        menuContact: "संपर्क"
+        menuContact: "संपर्क",
+         footerTeamTitle: "टीम सदस्य",
+  footerMember1: "विथिका सुर्वे",
+  footerMember2: "साक्षी महाले",
+  footerMember3: "भक्ति बाराफ",
+  footerMember4: "चित्रांग सावंत",
+  footerMotiveTitle: "उद्देश्य",
+  footerMotiveText: "किसानों को एआई और स्मार्ट टूल्स की मदद से फसल की समस्याओं का समय पर पता लगाने में सहायता करना।",
+  footerScopeTitle: "भविष्य की योजना",
+  footerScopeText: "सरकारी योजनाओं से एकीकरण, एआई आधारित फसल पूर्वानुमान और बहुभाषी चैटबॉट समर्थन।",
+  footerContactTitle: "संपर्क करें",
+  footerEmail: "contact@agrosense.in",
+  footerPhone: "+91 9876543210"
       },
       mr: {
         navTitle: "अ‍ॅग्रोसेंस", 
@@ -149,9 +193,23 @@
         menuHome: "मुख्यपृष्ठ", 
         menuAbout: "आमच्याबद्दल",
         menuServices: "सेवा", 
-        menuContact: "संपर्क"
+        menuContact: "संपर्क",
+        footerTeamTitle: "सदस्य संघ",
+  footerMember1: "विथिका सुर्वे",
+  footerMember2: "साक्षी महाले",
+  footerMember3: "भक्ति बाराफ",
+  footerMember4: "चित्रांग सावंत",
+  footerMotiveTitle: "उद्दिष्ट",
+  footerMotiveText: "शेतीतील समस्या लवकर ओळखण्यासाठी शेतकऱ्यांना AI आणि स्मार्ट टूल्सद्वारे मदत करणे.",
+  footerScopeTitle: "भविष्यातील योजना",
+  footerScopeText: "शासकीय योजनांसोबत समाकलन, AI आधारित पिक अंदाज आणि बहुभाषिक चॅटबॉट समर्थन.",
+  footerContactTitle: "संपर्क",
+  footerEmail: "contact@agrosense.in",
+  footerPhone: "+91 9876543210"
       }
+      
     };
+
 
     function changeLanguage() {
       const lang = document.getElementById('languageSelector').value;
@@ -268,27 +326,28 @@
     setInterval(slideNext, 3000);
   </script>
   <footer>
-    <div class="container footer-grid">
-      <div class="footer-section">
-        <h4>Team Members</h4>
-        <p>Vithika Surve </p>
-        <p>Sakshi Mahale</p>
-        <p>Bhakti Baraf</p>
-        <p>Chitrang Sawant</p>
-      </div>
-      <div class="footer-section">
-        <h4>Motive</h4>
-        <p>Helping farmers detect crop issues early using AI and smart tools.</p><br>
-        <h4>Future Scope</h4>
-        <p>Integration with government yojanas, AI crop prediction, and multilingual chatbot support.</p>
-      </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <p><i class="fas fa-envelope"></i> contact@agrosense.in</p>
-        <p><i class="fas fa-phone"></i> +91 9876543210</p>
-      </div>
+  <div class="container footer-grid">
+    <div class="footer-section">
+      <h4 id="footerTeamTitle">Team Members</h4>
+      <p id="footerMember1">Vithika Surve </p>
+      <p id="footerMember2">Sakshi Mahale</p>
+      <p id="footerMember3">Bhakti Baraf</p>
+      <p id="footerMember4">Chitrang Sawant</p>
     </div>
-  </footer>
+    <div class="footer-section">
+      <h4 id="footerMotiveTitle">Motive</h4>
+      <p id="footerMotiveText">Helping farmers detect crop issues early using AI and smart tools.</p><br>
+      <h4 id="footerScopeTitle">Future Scope</h4>
+      <p id="footerScopeText">Integration with government yojanas, AI crop prediction, and multilingual chatbot support.</p>
+    </div>
+    <div class="footer-section">
+      <h4 id="footerContactTitle">Contact</h4>
+      <p><i class="fas fa-envelope"></i> <span id="footerEmail">contact@agrosense.in</span></p>
+      <p><i class="fas fa-phone"></i> <span id="footerPhone">+91 9876543210</span></p>
+    </div>
+  </div>
+</footer>
+
 
 </body>
 </html>

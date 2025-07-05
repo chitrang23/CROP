@@ -12,6 +12,13 @@
     --black: #000000;
 }
 
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
 /* 🔧 Reset & Base */
 * {
     margin: 0;
@@ -379,18 +386,7 @@ body {
 }
 
 /*Slider*/
-:root {
-    --light-brown: #d9ad7c;
-    --brown: #674d3c;
-    --lightest-brown: #fbefcc;
-    --grey: #bccad6;
-    --main-brown: #7e4a35;
-    --white: #f0f0f0;
-    --green-mehendi: #405d27;
-    --light-green: #82b74b;
-    --green-nude: #b5e7a0;
-    --black: #000000;
-}
+
 
 body {
     margin: 0;
