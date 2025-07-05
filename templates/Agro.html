@@ -16,6 +16,9 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../static/Style/style.css" />
+  
+  <!--Favicon-->
+  <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon.png">
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -33,23 +36,17 @@
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <!-- Microphone Button -->
-          <li class="nav-item">
-            <button class="mic-button" id="micButton" onclick="toggleRecording()">
-              <i class="fas fa-microphone"></i>
-            </button>
-          </li>
- 
+
           <!-- Menu Dropdown -->
           <li class="nav-item dropdown">
             <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown">
               <span id="menuText">Menu</span>
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#" id="menuHome">Home</a></li>
-              <li><a class="dropdown-item" href="#" id="menuAbout">About</a></li>
-              <li><a class="dropdown-item" href="#" id="menuServices">Services</a></li>
-              <li><a class="dropdown-item" href="#" id="menuContact">Contact</a></li>
+              <li><a class="dropdown-item" href="#" id="menuHome">Schemes</a></li>
+              <li><a class="dropdown-item" href="#" id="menuAbout">Disese</a></li>
+              <li><a class="dropdown-item" href="#" id="menuServices">Weather</a></li>
+              <li><a class="dropdown-item" href="#" id="menuContact">Prices</a></li>
             </ul>
           </li>
 
@@ -61,9 +58,26 @@
               <option value="mr">मराठी</option>
             </select>
           </li>
+
+          <!--Profile icon-->
+          <li>
+          <button class="Profile-button" id="proButton" onclick="toggleRecording()" 
+        style="background-color: transparent; border: none; padding: 0; margin: 0;">
+        <img src="../static/images/profile.png" 
+       style="width: 42px; height: 42px; background-color: transparent; border: none;" />
+      </button>
+        <!-- Microphone Button -->
+          <li class="nav-item">
+            <button class="mic-button" id="micButton" onclick="toggleRecording()">
+              <i class="fas fa-microphone"></i>
+            </button>
+          </li>
+
+          </li>
         </ul>
       </div>
     </div>
+
   </nav>
 
   <!-- Hero Section -->
@@ -144,14 +158,14 @@
   <!-- JavaScript -->
   <script>
     const translations = {
-      en: {
-        navTitle: "AgroSense", 
-        heroText: "Is your Crop facing one of these?? Let's Find out",
-        menuText: "Menu", 
-        menuHome: "Home", 
-        menuAbout: "About",
-        menuServices: "Services", 
-        menuContact: "Contact",
+  en: {
+    navTitle: "AgroSense",
+    heroText: "Is your Crop facing one of these?? Let's Find out",
+    menuText: "Menu",
+    menuHome: "Schemes",
+    menuAbout: "Disease",
+    menuServices: "Weather",
+    menuContact: "Prices",
     footerTeamTitle: "Team Members",
     footerMember1: "Vithika Surve",
     footerMember2: "Sakshi Mahale",
@@ -164,52 +178,50 @@
     footerContactTitle: "Contact",
     footerEmail: "contact@agrosense.in",
     footerPhone: "+91 9876543210"
-      },
-      hi: {
-        navTitle: "एग्रोसेंस", 
-        heroText: "क्या आपकी फसल इनमें से किसी एक का सामना कर रही है? आइए जानें",
-        menuText: "मेनू", 
-        menuHome: "होम", 
-        menuAbout: "हमारे बारे में",
-        menuServices: "सेवाएं", 
-        menuContact: "संपर्क",
-         footerTeamTitle: "टीम सदस्य",
-  footerMember1: "विथिका सुर्वे",
-  footerMember2: "साक्षी महाले",
-  footerMember3: "भक्ति बाराफ",
-  footerMember4: "चित्रांग सावंत",
-  footerMotiveTitle: "उद्देश्य",
-  footerMotiveText: "किसानों को एआई और स्मार्ट टूल्स की मदद से फसल की समस्याओं का समय पर पता लगाने में सहायता करना।",
-  footerScopeTitle: "भविष्य की योजना",
-  footerScopeText: "सरकारी योजनाओं से एकीकरण, एआई आधारित फसल पूर्वानुमान और बहुभाषी चैटबॉट समर्थन।",
-  footerContactTitle: "संपर्क करें",
-  footerEmail: "contact@agrosense.in",
-  footerPhone: "+91 9876543210"
-      },
-      mr: {
-        navTitle: "अ‍ॅग्रोसेंस", 
-        heroText: "तुमच्या पिकाला यापैकी काही समस्या आहेत का?? चला जाणून घेऊया.",
-        menuText: "मेनू", 
-        menuHome: "मुख्यपृष्ठ", 
-        menuAbout: "आमच्याबद्दल",
-        menuServices: "सेवा", 
-        menuContact: "संपर्क",
-        footerTeamTitle: "सदस्य संघ",
-  footerMember1: "विथिका सुर्वे",
-  footerMember2: "साक्षी महाले",
-  footerMember3: "भक्ति बाराफ",
-  footerMember4: "चित्रांग सावंत",
-  footerMotiveTitle: "उद्दिष्ट",
-  footerMotiveText: "शेतीतील समस्या लवकर ओळखण्यासाठी शेतकऱ्यांना AI आणि स्मार्ट टूल्सद्वारे मदत करणे.",
-  footerScopeTitle: "भविष्यातील योजना",
-  footerScopeText: "शासकीय योजनांसोबत समाकलन, AI आधारित पिक अंदाज आणि बहुभाषिक चॅटबॉट समर्थन.",
-  footerContactTitle: "संपर्क",
-  footerEmail: "contact@agrosense.in",
-  footerPhone: "+91 9876543210"
-      }
-      
-    };
-
+  },
+  hi: {
+    navTitle: "एग्रोसेंस",
+    heroText: "क्या आपकी फसल इनमें से किसी एक का सामना कर रही है? आइए जानें",
+    menuText: "मेनू",
+    menuHome: "योजना",
+    menuAbout: "रोग",
+    menuServices: "मौसम",
+    menuContact: "कीमतें",
+    footerTeamTitle: "टीम सदस्य",
+    footerMember1: "विथिका सुर्वे",
+    footerMember2: "साक्षी महाले",
+    footerMember3: "भक्ति बाराफ",
+    footerMember4: "चित्रांग सावंत",
+    footerMotiveTitle: "उद्देश्य",
+    footerMotiveText: "किसानों को एआई और स्मार्ट टूल्स की मदद से फसल की समस्याओं का समय पर पता लगाने में सहायता करना।",
+    footerScopeTitle: "भविष्य की योजना",
+    footerScopeText: "सरकारी योजनाओं से एकीकरण, एआई आधारित फसल पूर्वानुमान और बहुभाषी चैटबॉट समर्थन।",
+    footerContactTitle: "संपर्क करें",
+    footerEmail: "contact@agrosense.in",
+    footerPhone: "+91 9876543210"
+  },
+  mr: {
+    navTitle: "अ‍ॅग्रोसेंस",
+    heroText: "तुमच्या पिकाला यापैकी काही समस्या आहेत का?? चला जाणून घेऊया.",
+    menuText: "मेनू",
+    menuHome: "योजना",
+    menuAbout: "रोग",
+    menuServices: "हवामान",
+    menuContact: "किंमती",
+    footerTeamTitle: "सदस्य संघ",
+    footerMember1: "विथिका सुर्वे",
+    footerMember2: "साक्षी महाले",
+    footerMember3: "भक्ति बाराफ",
+    footerMember4: "चित्रांग सावंत",
+    footerMotiveTitle: "उद्दिष्ट",
+    footerMotiveText: "शेतीतील समस्या लवकर ओळखण्यासाठी शेतकऱ्यांना AI आणि स्मार्ट टूल्सद्वारे मदत करणे.",
+    footerScopeTitle: "भविष्यातील योजना",
+    footerScopeText: "शासकीय योजनांसोबत समाकलन, AI आधारित पिक अंदाज आणि बहुभाषिक चॅटबॉट समर्थन.",
+    footerContactTitle: "संपर्क",
+    footerEmail: "contact@agrosense.in",
+    footerPhone: "+91 9876543210"
+  }
+};
 
     function changeLanguage() {
       const lang = document.getElementById('languageSelector').value;
@@ -336,7 +348,7 @@
     </div>
     <div class="footer-section">
       <h4 id="footerMotiveTitle">Motive</h4>
-      <p id="footerMotiveText">Helping farmers detect crop issues early using AI and smart tools.</p><br>
+      <p id="footerMotiveText">Helping farmers detect crop issues early using AI and smart tools.</p><br><br>
       <h4 id="footerScopeTitle">Future Scope</h4>
       <p id="footerScopeText">Integration with government yojanas, AI crop prediction, and multilingual chatbot support.</p>
     </div>

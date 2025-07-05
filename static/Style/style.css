@@ -93,7 +93,8 @@ body {
 }
 
 /* 🎙️ Microphone Button */
-.mic-button {
+.mic-button,
+.Profile-button {
     background: var(--green-mehendi);
     border: none;
     border-radius: 50%;
@@ -105,7 +106,8 @@ body {
     cursor: pointer;
 }
 
-.mic-button:hover {
+.mic-button:hover,
+.Profile-button:hover {
     background: var(--light-green);
     transform: scale(1.1);
     box-shadow: 0 5px 15px rgba(64, 93, 39, 0.3);
